@@ -28,3 +28,14 @@ Hello from DevOps
 
 ```bash
 docker build -t devops-flask-app.
+2. Run the container locally:
+docker run -p 5000:5000 devops-flask-app.
+3. Access the app at http://localhost:5000
+Deploying to Kubernetes
+1. Apply the deployment and service manifests:
+kubectl apply -f deployment.yaml
+kubectl apply -f service.yaml
+2. Check the pods and service status:
+kubectl get pods
+kubectl get svc
+3. Access the service depending on your Kubernetes setup (e.g., via kubectl port-forward or LoadBalancer IP).
