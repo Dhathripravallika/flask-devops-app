@@ -13,10 +13,14 @@ This is a simple Flask web application designed to demonstrate a basic DevOps de
 ## Application Details
 
 The Flask app listens on port 5000 and responds with the text:
+
+```
 Hello from DevOps
+```
+
 ## Prerequisites
 
-- Docker is installed and running
+- Docker installed and running
 - Kubernetes cluster access (e.g., Minikube, kind, or cloud provider)
 - `kubectl` CLI configured to access your cluster
 
@@ -27,15 +31,31 @@ Hello from DevOps
 1. Build the Docker image:
 
 ```bash
-docker build -t devops-flask-app.
+docker build -t devops-flask-app .
+```
+
 2. Run the container locally:
-docker run -p 5000:5000 devops-flask-app.
-3. Access the app at http://localhost:5000
-Deploying to Kubernetes
+
+```bash
+docker run -p 5000:5000 devops-flask-app
+```
+
+3. Access the app at [http://localhost:5000](http://localhost:5000)
+
+### Deploying to Kubernetes
+
 1. Apply the deployment and service manifests:
+
+```bash
 kubectl apply -f deployment.yaml
 kubectl apply -f service.yaml
+```
+
 2. Check the pods and service status:
+
+```bash
 kubectl get pods
 kubectl get svc
-3. Access the service depending on your Kubernetes setup (e.g., via kubectl port-forward or LoadBalancer IP).
+```
+
+3. Access the service depending on your Kubernetes setup (e.g., via `kubectl port-forward` or LoadBalancer IP).
